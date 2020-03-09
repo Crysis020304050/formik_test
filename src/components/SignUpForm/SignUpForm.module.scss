@@ -1,0 +1,27 @@
+.container {
+  max-width: 300px;
+  width: 100%;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+
+  @media screen and (max-height: 550px){
+    height: 400px;
+  }
+
+  @media screen and (max-height: 435px){
+    height: 300px;
+  }
+}
+
+.confirmButton {
+  background-color: #F39327;
+  cursor: pointer;
+  color: white;
+  padding: 10px 20px;
+  align-self: flex-start;
+  border-radius: 20px;
+
+}
