@@ -6,7 +6,9 @@ import PasswordInput from '../PasswordInput';
 import styles from './SignUpForm.module.scss';
 
 const handleSubmit = value => {
-    console.dir(value);
+    const noPassword = ({confirmPassword, ...rest}) => rest;
+    const preparedValue = noPassword(value);
+    console.dir(preparedValue);
 };
 
 function SignUpForm(props) {
@@ -37,7 +39,7 @@ function SignUpForm(props) {
               }
           </Field>
 
-          <Field name="passwordConfirmation" >
+          <Field name="confirmPassword" >
               {
                   fieldProps => <PasswordInput {...fieldProps} label="Confirm password:" type="password" autocomplete="new-password"/>
               }
@@ -48,7 +50,7 @@ function SignUpForm(props) {
 }
 
 export default withFormik({
-    mapPropsToValues: () => ({firstName: '', lastName: '', email: '', password: '', passwordConfirmation: '',}),
+    mapPropsToValues: () => ({firstName: '', lastName: '', email: '', password: '', confirmPassword: '',}),
     validationSchema: signUpSchema,
     handleSubmit,
 })(SignUpForm);

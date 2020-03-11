@@ -5,44 +5,49 @@ import {mdiEyeOffOutline, mdiEyeOutline} from '@mdi/js';
 import Icon from '@mdi/react';
 
 class PasswordInput extends Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      isHidden: true,
+    constructor(props) {
+        super(props);
+        this.state = {
+            isHidden: true,
+        }
     }
-  }
 
-  render () {
-    const {field, form, meta: {error, touched}, ...props} = this.props;
-    const {isHidden} = this.state;
-    const inputClassName = classNames( styles.field, {
-      [styles.fieldInvalid]: (touched && error),
-      [styles.fieldValid]: (touched && !error),
-    } );
+    toggleEye = () => {
+        this.setState({
+            isHidden: !this.state.isHidden,
+        })
+    };
 
-    return (
-      <label className={styles.container}>
-        {props.label}
-        <input {...field} className={inputClassName} {...props} type={isHidden
-          ? 'password'
-          : 'text'
-        }/>
-        <Icon onMouseDown={() => {
-          this.setState({
-                          isHidden: false,
-                        })
-        }} onMouseUp={() => {
-          this.setState({
-                          isHidden: true
-                        })
-        }} path={isHidden
-          ? mdiEyeOutline
-          : mdiEyeOffOutline} size={1}
-        />
-        {error && touched && <div className={styles.errorTip}>{error}</div>}
-      </label>
-    );
-  }
+    renderEyeIcon = () => {
+        const {isHidden} = this.state;
+        return (
+            <Icon className={styles.eyeIcon} onClick={this.toggleEye}
+                  path={isHidden
+                      ? mdiEyeOutline
+                      : mdiEyeOffOutline} size={1}
+            />
+        );
+    };
+
+    render() {
+        const {field, form, meta: {error, touched}, ...props} = this.props;
+        const {isHidden} = this.state;
+        const inputClassName = classNames(styles.field, {
+            [styles.fieldInvalid]: (touched && error),
+            [styles.fieldValid]: (touched && !error),
+        });
+
+        return (
+            <label className={styles.container}>
+                {props.label}
+                <input {...field} className={inputClassName} {...props} type={isHidden ? 'password' : 'text'}/>
+                {
+                    this.renderEyeIcon()
+                }
+                {error && touched && <div className={styles.errorTip}>{error}</div>}
+            </label>
+        );
+    }
 }
 
 export default PasswordInput;

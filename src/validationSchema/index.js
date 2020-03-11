@@ -8,6 +8,6 @@ export const signUpSchema = yup.object().shape({
     lastName: yup.string().required().matches(NAME_PATTERN, namePatternMessage('Last')).label('Last name'),
     email: yup.string().email().required().label('Email'),
     password: yup.string().min(8).required().label('Password'),
-    passwordConfirmation: yup.string().min(8).required().oneOf([yup.ref('password')], 'Both password need to be the same').label('Confirm password'),
+    confirmPassword: yup.string().min(8).required().oneOf([yup.ref('password')], 'Both password need to be the same').label('Confirm password'),
 });
 
