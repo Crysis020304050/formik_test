@@ -2,6 +2,7 @@ import React from "react";
 import {Form, Field, withFormik} from 'formik';
 import {signUpSchema} from "../../validationSchema";
 import Input from "../Input";
+import PasswordInput from '../PasswordInput';
 import styles from './SignUpForm.module.scss';
 
 const handleSubmit = value => {
@@ -32,13 +33,13 @@ function SignUpForm(props) {
 
           <Field name="password" >
               {
-                  fieldProps => <Input {...fieldProps} label="Password:" type="password" autocomplete="new-password"/>
+                  fieldProps => <PasswordInput {...fieldProps} label="Password:" type="password" autocomplete="new-password"/>
               }
           </Field>
 
           <Field name="passwordConfirmation" >
               {
-                  fieldProps => <Input {...fieldProps} label="Confirm password:" type="password" autocomplete="new-password"/>
+                  fieldProps => <PasswordInput {...fieldProps} label="Confirm password:" type="password" autocomplete="new-password"/>
               }
           </Field>
           <div className={styles.confirmButton} onClick={props.submitForm}>Sign Up</div>
