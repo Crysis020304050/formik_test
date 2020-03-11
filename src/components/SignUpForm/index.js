@@ -12,27 +12,33 @@ function SignUpForm(props) {
 
     return (
       <Form className={styles.container}>
-          <Field type="text" name="firstName" >
+          <Field name="firstName" >
               {
-                  fieldProps => <Input {...fieldProps} label="First name:"/>
+                  fieldProps => <Input {...fieldProps} label="First name:" type="text"/>
               }
           </Field>
 
-          <Field type="text" name="lastName" >
+          <Field name="lastName" >
               {
-                  fieldProps => <Input {...fieldProps} label="Last name:"/>
+                  fieldProps => <Input {...fieldProps} label="Last name:" type="text"/>
               }
           </Field>
 
-          <Field type="email" name="email" >
+          <Field name="email" >
               {
-                  fieldProps => <Input {...fieldProps} label="Email:"/>
+                  fieldProps => <Input {...fieldProps} label="Email:" type="email" autocomplete="username"/>
               }
           </Field>
 
-          <Field type="password" name="password" >
+          <Field name="password" >
               {
-                  fieldProps => <Input {...fieldProps} label="Password:"/>
+                  fieldProps => <Input {...fieldProps} label="Password:" type="password" autocomplete="new-password"/>
+              }
+          </Field>
+
+          <Field name="passwordConfirmation" >
+              {
+                  fieldProps => <Input {...fieldProps} label="Confirm password:" type="password" autocomplete="new-password"/>
               }
           </Field>
           <div className={styles.confirmButton} onClick={props.submitForm}>Sign Up</div>
@@ -41,7 +47,7 @@ function SignUpForm(props) {
 }
 
 export default withFormik({
-    mapPropsToValues: () => ({firstName: '', lastName: '', email: '', password: ''}),
+    mapPropsToValues: () => ({firstName: '', lastName: '', email: '', password: '', passwordConfirmation: '',}),
     validationSchema: signUpSchema,
     handleSubmit,
 })(SignUpForm);

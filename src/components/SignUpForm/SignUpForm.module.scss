@@ -24,4 +24,12 @@
   align-self: flex-start;
   border-radius: 20px;
 
+  @media screen and (max-height: 550px){
+    padding: 7px 17px;
+  }
+
+  @media screen and (max-height: 435px){
+    padding: 5px 15px;
+  }
+
 }

@@ -12,6 +12,14 @@
   border-radius: 5px;
   outline: none;
   color: rgb(36, 41, 46);
+
+  @media screen and (max-height: 550px){
+    padding: 6px;
+  }
+
+  @media screen and (max-height: 435px){
+    padding: 4px;
+  }
 }
 
 .field:focus {
@@ -35,7 +43,7 @@
   border-color: #cea0a5;
   z-index: 10;
   display: block;
-  padding: 5px 8px;
+  padding: 3px 6px;
   margin: 4px 0 0;
   font-size: 13px;
   font-weight: 400;

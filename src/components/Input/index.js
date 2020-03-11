@@ -7,7 +7,6 @@ const Input = ({ field, form, meta: {error, touched}, ...props }) => {
         [styles.fieldInvalid]: (touched && error),
         [styles.fieldValid]: (touched && !error),
     } );
-
     return (
         <label className={styles.container}>
             {props.label}
