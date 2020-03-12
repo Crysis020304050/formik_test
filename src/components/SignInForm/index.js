@@ -8,9 +8,7 @@ import { NavLink } from 'react-router-dom';
 import {renderFieldWithCustomInput} from '../../utils/renderFieldWithCustomInput';
 
 const handleSubmit = value => {
-  const noPassword = ({confirmPassword, ...rest}) => rest;
-  const preparedValue = noPassword(value);
-  console.dir(preparedValue);
+  console.dir(value);
 };
 
 function SignInForm(props) {
@@ -19,7 +17,7 @@ function SignInForm(props) {
     <>
       <div className={styles.formWrapper}>
         <h1>Sign In</h1>
-        <h4>Please fill in this form to login!</h4>
+        <h4>Please fill in this form to login</h4>
         <Form className={classNames(styles.container, newStyles.signInFormContainer)}>
           {
             renderFieldWithCustomInput({name: 'email'}, {placeholder: 'Email', type: 'email'})

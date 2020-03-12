@@ -17,7 +17,7 @@ function SignUpForm(props) {
       <>
       <div className={styles.formWrapper}>
         <h1>Sign Up</h1>
-        <h4>Please fill in this form to create an account!</h4>
+        <h4>Please fill in this form to create an account</h4>
         <Form className={styles.container}>
           {
             renderFieldWithCustomInput({name: 'firstName'}, {placeholder: 'First Name'})
