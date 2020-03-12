@@ -39,7 +39,6 @@ class PasswordInput extends Component {
 
         return (
             <label className={styles.container}>
-                {props.label}
                 <input {...field} className={inputClassName} {...props} type={isHidden ? 'password' : 'text'}/>
                 {
                     this.renderEyeIcon()

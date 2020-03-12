@@ -365,9 +365,12 @@ textarea {
   padding: 0.2em 0;
 }
 
+
 body {
   min-width: 100vw;
   min-height: 100vh;
+  --main-color: #3598DC;
+  background-color: var(--main-color);
 }
 
 * {

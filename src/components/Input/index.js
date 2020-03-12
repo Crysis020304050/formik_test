@@ -9,7 +9,6 @@ const Input = ({ field, form, meta: {error, touched}, ...props }) => {
     } );
     return (
         <label className={styles.container}>
-            {props.label}
             <input {...field} className={inputClassName} {...props}/>
             {error && touched && <div className={styles.errorTip}>{error}</div>}
         </label>
