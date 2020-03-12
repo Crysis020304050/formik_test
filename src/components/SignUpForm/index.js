@@ -1,9 +1,9 @@
 import React from "react";
-import {Form, Field, withFormik} from 'formik';
+import {Form, withFormik} from 'formik';
 import {signUpSchema} from "../../validationSchema";
-import Input from "../Input";
-import PasswordInput from '../PasswordInput';
 import styles from './SignUpForm.module.scss';
+import { NavLink } from 'react-router-dom';
+import {renderFieldWithCustomInput} from '../../utils/renderFieldWithCustomInput';
 
 const handleSubmit = value => {
     const noPassword = ({confirmPassword, ...rest}) => rest;
@@ -13,17 +13,8 @@ const handleSubmit = value => {
 
 function SignUpForm(props) {
 
-  const renderFieldWithCustomInput = (fieldProps, inputProps) => {
-    const inputComponent = fieldProps => inputProps.type === 'password' ? <PasswordInput {...fieldProps} {...inputProps}/> : <Input {...fieldProps} {...inputProps}/>;
-      return (
-        <Field {...fieldProps}>
-          {
-            fieldProps => inputComponent(fieldProps)
-          }
-        </Field>
-      );
-  };
     return (
+      <>
       <div className={styles.formWrapper}>
         <h1>Sign Up</h1>
         <h4>Please fill in this form to create an account!</h4>
@@ -46,7 +37,8 @@ function SignUpForm(props) {
           <div className={styles.confirmButton} onClick={props.submitForm}>Sign Up</div>
         </Form>
       </div>
-
+        <NavLink className={styles.navLink} to='./sign_in'>Already have an account? Login here</NavLink>
+      </>
     );
 }
 

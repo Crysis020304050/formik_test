@@ -1,9 +1,13 @@
 import React from 'react';
 import SignUpForm from "./components/SignUpForm";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <SignUpForm/>
+    <Router>
+      <SignUpForm/>
+    </Router>
+
   );
 }
 
