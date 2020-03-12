@@ -24,22 +24,22 @@
 }
 
 .field:focus {
-  border-color: #2188ff;
+  border-color: var(--main-color);
   outline: none;
   box-shadow: inset 0 1px 2px rgba(27, 31, 35, .075), 0 0 0 0.2em rgba(3, 102, 214, .3);
 }
 
 .fieldInvalid {
-  border-color: #86181d;
+  border-color: #DD0303;
 }
 
 .fieldValid {
-  border-color: green;
+  border-color: #00C4A2;
 }
 
 .errorTip {
   position: absolute;
-  color: #86181d;
+  color: #DD0303;
   background-color: #ffdce0;
   border-color: #cea0a5;
   z-index: 10;

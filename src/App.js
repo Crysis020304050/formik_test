@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const SignUpPage = lazy( () => import( './pages/SignUpPage.js' ) );
 const SignInPage = lazy( () => import( './pages/SignInPage.js' ) );
-const fallbackElem = <div className='loader'>Loading...</div>;
+const fallbackElem = <div>Loading...</div>;
 
 function App() {
   return (
