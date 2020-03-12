@@ -1,0 +1,11 @@
+.signInFormContainer {
+  height: 200px;
+
+  @media screen and (max-height: 570px){
+    height: 170px;
+  }
+
+  @media screen and (max-height: 435px){
+    height: 130px;
+  }
+}

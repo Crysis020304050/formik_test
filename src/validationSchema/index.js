@@ -11,3 +11,7 @@ export const signUpSchema = yup.object().shape({
     confirmPassword: yup.string().min(8).required().oneOf([yup.ref('password')], 'Both password need to be the same').label('Confirm password'),
 });
 
+export const signInSchema = yup.object().shape({
+                                                   email: yup.string().email().required().label('Email'),
+                                                   password: yup.string().min(8).required().label('Password'),
+                                               });

@@ -14,7 +14,7 @@
   outline: none;
   color: rgb(36, 41, 46);
 
-  @media screen and (max-height: 550px){
+  @media screen and (max-height: 570px){
     padding: 6px;
   }
 
@@ -88,4 +88,12 @@
   position: absolute;
   top: 28%;
   right: 2%;
+
+  @media screen and (max-height: 570px){
+    top: 21%;
+  }
+
+  @media screen and (max-height: 435px){
+    top: 18%;
+  }
 }
