@@ -5,7 +5,9 @@ import styles from '../SignUpForm/SignUpForm.module.scss';
 import newStyles from './SignInForm.module.scss';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
-import {renderFieldWithCustomInput} from '../../utils/renderFieldWithCustomInput';
+import withField from '../HOC_withField'
+import Input from '../Input';
+import PasswordInput from '../PasswordInput';
 
 const handleSubmit = value => {
   console.dir(value);
@@ -20,10 +22,10 @@ function SignInForm(props) {
         <h4>Please fill in this form to login</h4>
         <Form className={classNames(styles.container, newStyles.signInFormContainer)}>
           {
-            renderFieldWithCustomInput({name: 'email'}, {placeholder: 'Email', type: 'email'})
+            withField(Input, {name: 'email'}, {placeholder: 'Email', type: 'email'})
           }
           {
-            renderFieldWithCustomInput({name: 'password'}, {placeholder: 'Password', type: 'password'})
+            withField(PasswordInput,{name: 'password'}, {placeholder: 'Password', type: 'password'})
           }
           <div className={styles.confirmButton} onClick={props.submitForm}>Sign In</div>
         </Form>
