@@ -22,10 +22,10 @@ function SignInForm(props) {
         <h4>Please fill in this form to login</h4>
         <Form className={classNames(styles.container, newStyles.signInFormContainer)}>
           {
-            withField(Input, {name: 'email'}, {placeholder: 'Email', type: 'email'})
+            withField(Input)( {name: 'email'})( {placeholder: 'Email', type: 'email'})
           }
           {
-            withField(PasswordInput,{name: 'password'}, {placeholder: 'Password', type: 'password'})
+            withField(PasswordInput)({name: 'password'})({placeholder: 'Password', type: 'password'})
           }
           <div className={styles.confirmButton} onClick={props.submitForm}>Sign In</div>
         </Form>

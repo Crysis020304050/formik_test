@@ -22,19 +22,19 @@ function SignUpForm(props) {
         <h4>Please fill in this form to create an account</h4>
         <Form className={styles.container}>
           {
-            withField(Input,{name: 'firstName'}, {placeholder: 'First Name'})
+            withField(Input)({name: 'firstName'})({placeholder: 'First Name'})
           }
           {
-            withField(Input,{name: 'lastName'}, {placeholder: 'Last Name'})
+            withField(Input)({name: 'lastName'})({placeholder: 'Last Name'})
           }
           {
-            withField(Input,{name: 'email'}, {placeholder: 'Email', type: 'email'})
+            withField(Input)({name: 'email'})({placeholder: 'Email', type: 'email'})
           }
           {
-            withField(PasswordInput,{name: 'password'}, {placeholder: 'Password', type: 'password'})
+            withField(PasswordInput)({name: 'password'})({placeholder: 'Password', type: 'password'})
           }
           {
-            withField(PasswordInput,{name: 'confirmPassword'}, {placeholder: 'Confirm Password', type: 'password'})
+            withField(PasswordInput)({name: 'confirmPassword'})({placeholder: 'Confirm Password', type: 'password'})
           }
           <div className={styles.confirmButton} onClick={props.submitForm}>Sign Up</div>
         </Form>
