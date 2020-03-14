@@ -1,5 +1,7 @@
+@import "src/styles/variables";
+
 body {
-  background-color: var(--main-color);
+  background-color: $main-color;
 }
 
 .formWrapper {
@@ -13,32 +15,32 @@ body {
   font-family: sans-serif;
 
   h1 {
-    margin-left: 25px;
+    margin-left: $left-indent-large;
     font-size: 28px;
     font-weight: 600;
 
     @media screen and (max-height: 570px){
-      margin-left: 20px;
+      margin-left: $left-indent-medium;
       font-size: 18px;
     }
 
     @media screen and (max-height: 435px){
-      margin-left: 15px;
+      margin-left: $left-indent-small;
       font-size: 15px;
     }
   }
 
   h4 {
-    margin: 10px 0 10px 25px;
+    margin: 10px 0 10px $left-indent-large;
     color: rgba(0, 0, 0, 0.4);
     font-size: 12px;
 
     @media screen and (max-height: 570px){
-      margin: 10px 0 10px 20px;
+      margin: 10px 0 10px $left-indent-medium;
     }
 
     @media screen and (max-height: 435px){
-      margin: 10px 0 10px 15px;
+      margin: 10px 0 10px $left-indent-small;
     }
   }
 
@@ -61,21 +63,21 @@ body {
   flex-direction: column;
   align-items: stretch;
   justify-content: space-between;
-  padding: 15px 25px 0;
+  padding: 15px $left-indent-large 0;
 
   @media screen and (max-height: 570px){
     height: 300px;
-    padding: 10px 20px 0;
+    padding: 10px $left-indent-medium 0;
   }
 
   @media screen and (max-height: 435px){
     height: 200px;
-    padding: 5px 15px 0;
+    padding: 5px $left-indent-small 0;
   }
 }
 
 .confirmButton {
-  background-color: var(--main-color);
+  background-color: $main-color;
   cursor: pointer;
   color: white;
   font-weight: 800;

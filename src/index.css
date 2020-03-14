@@ -369,7 +369,6 @@ textarea {
 body {
   min-width: 100vw;
   min-height: 100vh;
-  --main-color: #3598DC;
 }
 
 * {
