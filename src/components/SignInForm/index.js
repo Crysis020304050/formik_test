@@ -5,9 +5,10 @@ import styles from '../SignUpForm/SignUpForm.module.scss';
 import newStyles from './SignInForm.module.scss';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
-import withField from '../HOC_withField'
-import Input from '../Input';
-import PasswordInput from '../PasswordInput';
+import {fieldValues} from '../../formsDataAndUtils/formsData'
+import {renderFields} from '../../formsDataAndUtils/formsUtils'
+
+const signInFieldsValues = [fieldValues[2], fieldValues[3]];
 
 const handleSubmit = value => {
   console.dir(value);
@@ -21,12 +22,9 @@ function SignInForm(props) {
         <h1>Sign In</h1>
         <h4>Please fill in this form to login</h4>
         <Form className={classNames(styles.container, newStyles.signInFormContainer)}>
-          {
-            withField(Input)( {name: 'email'})( {placeholder: 'Email', type: 'email'})
-          }
-          {
-            withField(PasswordInput)({name: 'password'})({placeholder: 'Password', type: 'password'})
-          }
+            {
+                renderFields(signInFieldsValues)
+            }
           <div className={styles.confirmButton} onClick={props.submitForm}>Sign In</div>
         </Form>
       </div>
