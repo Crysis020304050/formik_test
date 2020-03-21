@@ -1,11 +1,11 @@
 import React from 'react';
 import { Field } from 'formik';
 
-export const withField = (WrappedComponent) => (fieldOptions) => {
+export const withField = (WrappedComponent, key) => (fieldOptions) => {
 
     return (inputProps) => {
         return (
-            <Field {...fieldOptions}>
+            <Field key={key} {...fieldOptions}>
                 {
                     fieldProps => <WrappedComponent {...fieldProps} {...inputProps}/>
                 }
@@ -15,8 +15,8 @@ export const withField = (WrappedComponent) => (fieldOptions) => {
 };
 
 export const renderFields = (fieldsValues) => {
-    return fieldsValues.map(fieldValues => {
+    return fieldsValues.map((fieldValues, key) => {
         const {component, fieldOptions, inputProps} = fieldValues;
-        return withField(component)(fieldOptions)(inputProps);
+        return withField(component, key)(fieldOptions)(inputProps);
     })
 };

@@ -1,17 +1,22 @@
 import React from "react";
 import {Form, withFormik} from 'formik';
-import {signInSchema} from "../../validationSchema";
+import {signInSchema} from "../../../validationSchema";
 import styles from '../SignUpForm/SignUpForm.module.scss';
 import newStyles from './SignInForm.module.scss';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
-import {fieldValues} from '../../formsDataAndUtils/formsData'
-import {renderFields} from '../../formsDataAndUtils/formsUtils'
+import {fieldValues} from '../../../formsDataAndUtils/formsData'
+import {renderFields} from '../../../formsDataAndUtils/formsUtils'
+import store from "../../../store";
+import {ACTION_TYPES} from "../../../actions";
 
 const signInFieldsValues = [fieldValues[2], fieldValues[3]];
 
 const handleSubmit = value => {
-  console.dir(value);
+    store.dispatch({
+        type: ACTION_TYPES.LOGIN_USER_REQUEST,
+        data: value,
+    });
 };
 
 function SignInForm(props) {

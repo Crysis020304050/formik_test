@@ -1,15 +1,20 @@
 import React from "react";
 import {Form, withFormik} from 'formik';
-import {signUpSchema} from "../../validationSchema";
+import {signUpSchema} from "../../../validationSchema";
 import styles from './SignUpForm.module.scss';
 import { NavLink } from 'react-router-dom';
-import {fieldValues} from '../../formsDataAndUtils/formsData'
-import {renderFields} from '../../formsDataAndUtils/formsUtils'
+import {fieldValues} from '../../../formsDataAndUtils/formsData'
+import {renderFields} from '../../../formsDataAndUtils/formsUtils'
+import store from '../../../store';
+import {ACTION_TYPES} from "../../../actions";
 
 const handleSubmit = value => {
-    const noPassword = ({confirmPassword, ...rest}) => rest;
-    const preparedValue = noPassword(value);
-    console.dir(preparedValue);
+    const noConfirmPassword = ({confirmPassword, ...rest}) => rest;
+    const preparedValue = noConfirmPassword(value);
+    store.dispatch({
+       type: ACTION_TYPES.LOGIN_USER_REQUEST,
+       data: {...preparedValue, formType: 'signUp'},
+    });
 };
 
 function SignUpForm(props) {

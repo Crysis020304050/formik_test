@@ -1,5 +1,5 @@
-import Input from "../../components/Input";
-import PasswordInput from "../../components/PasswordInput";
+import Input from "../../components/forms/Input";
+import PasswordInput from "../../components/forms/PasswordInput";
 
 export const fieldValues = [
     {
