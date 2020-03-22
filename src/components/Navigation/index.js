@@ -11,12 +11,7 @@ const Navigation = ({user, logOut}) => {
                 <li><NavLink exact to="/">Home</NavLink></li>
                 {!user && <li><NavLink to="/sign_in">Sign In</NavLink></li>}
                 {!user && <li><NavLink to="/sign_up">Sign Up</NavLink></li>}
-                {user && <li><button onClick={() => {
-                    localStorage.removeItem(REFRESH_TOKEN_KEY);
-                    sessionStorage.removeItem(ACCESS_TOKEN_KEY);
-                    logOut();
-                }
-                }>Log Out</button></li>}
+                {user && <li><button onClick={logOut}>Log Out</button></li>}
             </ul>
         </nav>
     );
@@ -27,7 +22,7 @@ const mapStateToProps = state => state.authStore;
 const mapDispatchToProps = dispatch => {
   return {
       logOut: () => dispatch({
-         type: ACTION_TYPES.USER_LOGOUT,
+         type: ACTION_TYPES.USER_LOGOUT_REQUEST,
       }),
   }
 };

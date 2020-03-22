@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function SignInPage({user, error}) {
 
-    if (error && !toast.isActive(1)) {
+    if (error?.response && !toast.isActive(1)) {
         const {response: {data}} = error;
         const notify = () => {
             toast(data, {
@@ -22,7 +22,7 @@ function SignInPage({user, error}) {
 
     return (
         <>
-            {user ? <Redirect to={'/'}/>: <SignInForm/>}
+            {user ? <Redirect to={'/'}/> : <SignInForm/>}
             {
                 error && <ToastContainer/>
             }

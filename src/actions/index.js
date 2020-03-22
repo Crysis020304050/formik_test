@@ -2,5 +2,6 @@ export const ACTION_TYPES = Object.freeze({
     LOGIN_USER_REQUEST: Symbol(),
     LOGIN_USER_SUCCESS: Symbol(),
     LOGIN_USER_ERROR: Symbol(),
-    USER_LOGOUT: Symbol(),
+    USER_LOGOUT_REQUEST: Symbol(),
+    USER_LOGOUT_ERROR: Symbol(),
 });

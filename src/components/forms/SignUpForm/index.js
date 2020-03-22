@@ -9,11 +9,9 @@ import store from '../../../store';
 import {ACTION_TYPES} from "../../../actions";
 
 const handleSubmit = value => {
-    const noConfirmPassword = ({confirmPassword, ...rest}) => rest;
-    const preparedValue = noConfirmPassword(value);
     store.dispatch({
        type: ACTION_TYPES.LOGIN_USER_REQUEST,
-       data: {...preparedValue, formType: 'signUp'},
+       data: value,
     });
 };
 

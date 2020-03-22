@@ -18,8 +18,11 @@ const authenticateUser = async (url, data) => {
 export const signInUser = async (data) => authenticateUser('/sign_in', data);
 export const signUpUser = async (data) => authenticateUser('/sign_up', data);
 export const signInUserByRefreshToken = async () => authenticateUser( '/refresh_sign_in', {
-    refreshToken: localStorage.getItem( REFRESH_TOKEN_KEY )
+    refreshToken: localStorage.getItem( REFRESH_TOKEN_KEY ),
 } );
 export const refreshTokens = async () => authenticateUser( '/refresh_tokens', {
-    refreshToken: localStorage.getItem( REFRESH_TOKEN_KEY )
+    refreshToken: localStorage.getItem( REFRESH_TOKEN_KEY ),
 } );
+export const deleteRefreshToken = async () => authenticateUser('delete_refresh_token', {
+    refreshToken: localStorage.getItem( REFRESH_TOKEN_KEY ),
+});

@@ -25,8 +25,8 @@ export default function authReducer (state = initialState, action) {
         isFetching: false,
         error: action.error,
       };
-    case ACTION_TYPES.USER_LOGOUT:
-      return state = null;
+    case ACTION_TYPES.USER_LOGOUT_REQUEST:
+      return state = {};
     default:
       return state;
   }

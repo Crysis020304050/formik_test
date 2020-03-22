@@ -5,7 +5,7 @@ import {ACTION_TYPES} from "../actions";
 export function* authSaga(action) {
     try {
         const {data: {user}} = action.data
-            ? action.data.formType
+            ? Object.keys(action.data).length > 3
                 ? yield signUpUser(action.data)
                 : yield signInUser(action.data)
             : yield signInUserByRefreshToken();
